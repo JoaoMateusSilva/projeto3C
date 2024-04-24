@@ -106,4 +106,10 @@ int carregar (Contato contatos[], int total, int pos) {
     return OK;
 }
 
+void clearBuffer() {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF) {
+  }
+}
+
 

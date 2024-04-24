@@ -14,3 +14,4 @@ Erro deletar(Contato contatos[], int *pos);
 Erro listar(Contato contatos[], int pos);
 Erro salvar(Contato contatos[], int total, int pos);
 Erro carregar(Contato contatos[], int total, int *pos);
+void clearBuffer();

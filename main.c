@@ -9,7 +9,7 @@ int main(){
 
   int pos;
 
-  ERROS erro = fs[4](contatos, &pos);
+ERROS erro = fs[4](contatos, &pos);
     if(erro != OK){
       if(erro == ABRIR){
         printf("erro ao abrir o arquivo\n");
@@ -33,7 +33,6 @@ int main(){
     printf("2 - Deletar contato\n");
     printf("3 - Listar contatos\n");
     printf("0 - Sair\n");
-    
     printf("Entre com uma opcao: ");
     int i = scanf("%d", &opcao);
     clearBuffer();
