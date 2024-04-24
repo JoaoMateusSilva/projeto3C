@@ -1,7 +1,7 @@
 #define TOTAL 255
 
 typedef struct Tarefa {
-    char contato[100];
+    char nome[100];
     char numero[11];
 } Contato;
 
