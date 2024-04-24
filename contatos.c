@@ -20,7 +20,32 @@ int criar(Contato contatos[], int *pos) {
 }
 
 int deletar(Contato contatos[], int *pos) {
-    printf("funcao de deletar tarefa\n");
+    if (*pos == 0)
+        return 1;
+
+    char numero_deletar[11];
+    printf("Entre com o numero do contato a ser deletado: ");
+    fgets(numero_deletar, 11, stdin);
+    numero_deletar[strcspn(numero_deletar, "\n")] = '\0';
+
+    int pos_deletar = -1;
+    for (int i = 0; i < *pos; i++) {
+        if (strcmp(contatos[i].numero, numero_deletar) == 0) {
+            pos_deletar = i;
+            break;
+        }
+    }
+
+    if (pos_deletar == -1)
+        return 2;
+
+    for (int i = pos_deletar; i < *pos; i++) {
+        strcpy(contatos[i].nome, contatos[i + 1].nome);
+        strcpy(contatos[i].numero, contatos[i + 1].numero);
+    }
+
+    *pos = *pos - 1;
+
     return 0;
 }
 
