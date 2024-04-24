@@ -3,27 +3,27 @@
 #include "contatos.h"
 
 int main(){
-    funcao fs[] = {criar, deletar, listar, salvar, carregar};
+  funcao fs[] = {criar, deletar, listar, salvar, carregar};
 
-    Contato contatos[TOTAL];
+  Contato contatos[TOTAL];
 
-    int pos;
+  int pos;
 
-    ERROS erro = fs[4](contatos, &pos);
+  ERROS erro = fs[4](contatos, &pos);
     if(erro != OK){
-        if(erro == ABRIR){
-            printf("erro ao abrir o arquivo\n");
-            pos = 0;
-        } 
-        else if(erro == FECHAR){
-            printf("erro ao fechar o arquivo\n");
-            pos = 0;
-        }
-        else if(erro == LER){
-            printf("erro ao ler no arquivo\n");
-            pos = 0;
-        }
-    }
+      if(erro == ABRIR){
+        printf("erro ao abrir o arquivo\n");
+        pos = 0;
+      } 
+      else if(erro == FECHAR){
+        printf("erro ao fechar o arquivo\n");
+        pos = 0;
+      }
+      else if(erro == LER){
+        printf("erro ao ler no arquivo\n");
+        pos = 0;
+      }
+  }
 
   int opcao;
   
@@ -70,11 +70,11 @@ int main(){
     }
   } while (opcao != 0);
 
-    ERROS errosalvar = fs[3](contatos, &pos);
+  ERROS errosalvar = fs[3](contatos, &pos);
     if(erro == ABRIR)
-        printf("erro ao abrir o arquivo\n");
+      printf("erro ao abrir o arquivo\n");
     else if(erro == FECHAR)
-        printf("erro ao fechar o arquivo\n");
+      printf("erro ao fechar o arquivo\n");
     else if(erro == ESCREVER)
-        printf("erro ao escrever no arquivo\n");
+      printf("erro ao escrever no arquivo\n");
 }
