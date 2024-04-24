@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "tarefas.h"
+#include "contatos.h"
 
 int main(){
     funcao fs[] = {criar, deletar, listar, salvar, carregar, exportar};
