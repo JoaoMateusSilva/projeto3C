@@ -61,12 +61,44 @@ int listar(Contato contatos[], int pos) {
 }
 
 int salvar (Contato contatos[], int total, int pos) {
-    printf("funcao de salvar tarefas\n");
+    FILE *f = fopen("contatos", "wb");
+    if(f == NULL)
+        return 1;
+
+    int e = fwrite(contatos, total, sizeof(Contato), f);
+    if(e <= 0)
+        return 2;
+
+    e = fwrite(&pos, 1, sizeof(int), f);
+    if(e <= 0)
+        return 2;
+
+    e = fclose(f);
+    if(e != 0)
+        return 3;
+
     return 0;
+
 }
 
 int carregar (Contato contatos[], int total, int pos) {
-    printf("funcao de carregar tarefas\n");
+    FILE *f = fopen("contatos", "rb");
+    if(f == NULL)
+        return 1;
+
+    int e = fread(contatos, total, sizeof(Contato), f);
+    if(e <= 0)
+        return 2;
+
+    e = fread(pos, 1, sizeof(int), f);
+    if(e <= 0)
+        return 2;
+
+    e = fclose(f);
+    if(e != 0)
+    return 3;
+
     return 0;
 }
+
 

@@ -9,7 +9,7 @@ int main(){
 
     int pos;
 
-    ERROS erro = fs[4](contato, &pos);
+    ERROS erro = fs[4](contatos, &pos);
     if(erro != OK){
         if(erro == ABRIR){
             printf("erro ao abrir o arquivo\n");
@@ -41,24 +41,24 @@ int main(){
     printf("Opcao escolhida: %d\n", opcao);
     
     if (opcao == 1) {
-      erro = criar(contato, &pos);
+      erro = criar(contatos, &pos);
       if(erro == MAX_CONTATO)
         printf("maximo de contatos alcancadas\n");
       else if(erro == NUMERO_INVALIDO)
         printf("numero invalido\n");
     } else if (opcao == 2) {
-      erro = deletar(contato, &pos);
+      erro = deletar(contatos, &pos);
       if(erro == SEM_CONTATO)
         printf("sem contatos para deletar\n");
       else if(erro == NAO_ENCONTRADO)
         printf("esse c nao existe\n");
     } else if (opcao == 3) {
-      erro = listar(contato, &pos);
+      erro = listar(contatos, &pos);
       if(erro == SEM_CONTATO)
         printf("sem contatos para listar\n");
     } else if (opcao == 0) {
       printf("Sair. . .\n");
-      erro = salvar(contato, &pos);
+      erro = salvar(contatos, &pos);
       if(erro == ABRIR)
         printf("erro ao abrir o arquivo\n");
       else if(erro == FECHAR)
@@ -70,7 +70,7 @@ int main(){
     }
   } while (opcao != 0);
 
-    ERROS errosalvar = fs[3](contato, &pos);
+    ERROS errosalvar = fs[3](contatos, &pos);
     if(erro == ABRIR)
         printf("erro ao abrir o arquivo\n");
     else if(erro == FECHAR)
