@@ -3,7 +3,7 @@
 #include "contatos.h"
 
 int main(){
-    funcao fs[] = {criar, deletar, listar, salvar, carregar, exportar};
+    funcao fs[] = {criar, deletar, listar, salvar, carregar};
 
     Contato contatos[TOTAL];
 
@@ -26,12 +26,12 @@ int main(){
     }
 
   int opcao;
+  
   do {
     printf("\nMenu principal\n");
     printf("1 - Criar contato\n");
     printf("2 - Deletar contato\n");
     printf("3 - Listar contatos\n");
-    printf("4 - Exportar\n");
     printf("0 - Sair\n");
     
     printf("Entre com uma opcao: ");
@@ -65,10 +65,6 @@ int main(){
         printf("erro ao fechar o arquivo\n");
       else if(erro == ESCREVER)
         printf("erro ao escrever no arquivo\n");
-    } else if (opcao == 4) {
-        erro = exportar(contato, &pos);
-        if(erro == ABRIR)
-          printf("erro ao abrir o arquivo\n");
     } else {
       printf("opcao invalida");
     }
