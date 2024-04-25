@@ -4,7 +4,7 @@
 
 int criar(Contato contatos[], int *pos) {
     if (*pos >= TOTAL)
-        return 1;
+        return MAX_CONTATOS;
 
     printf("Entre com o nome do contato: ");
     fgets(contatos[*pos].nome, 100, stdin);
@@ -16,12 +16,12 @@ int criar(Contato contatos[], int *pos) {
 
     *pos = *pos + 1;
 
-    return 0;
+    return OK;
 }
 
 int deletar(Contato contatos[], int *pos) {
     if (*pos == 0)
-        return 1;
+        return SEM_CONTATOS;
 
     char numero_deletar[11];
     printf("Entre com o numero do contato a ser deletado: ");
@@ -34,10 +34,12 @@ int deletar(Contato contatos[], int *pos) {
             pos_deletar = i;
             break;
         }
+        else if ((strcmp(contatos[i].numero, numero_deletar) =! 0)) {
+            return NAO_EXISTE;
+            break;
+        }
+        
     }
-
-    if (pos_deletar == -1)
-        return 2;
 
     for (int i = pos_deletar; i < *pos; i++) {
         strcpy(contatos[i].nome, contatos[i + 1].nome);
@@ -46,27 +48,66 @@ int deletar(Contato contatos[], int *pos) {
 
     *pos = *pos - 1;
 
-    return 0;
+    return OK;
 }
 
 int listar(Contato contatos[], int pos) {
     if (pos == 0)
-        return 1;
+        return SEM_CONTATOS;
 
     for (int i = 0; i < pos; i++) {
         printf("Pos: %d\t", i + 1);
         printf("Contato: %s\t", contatos[i].nome);
         printf("Numero: %s\n", contatos[i].numero);
     }
+
+    return OK;
 }
 
+
 int salvar (Contato contatos[], int total, int pos) {
-    printf("funcao de salvar tarefas\n");
-    return 0;
+    FILE *f = fopen("contatos", "wb");
+    if(f == NULL)
+        return ABRIR;
+
+    int e = fwrite(contatos, total, sizeof(Contato), f);
+    if(e <= 0)
+        return ESCREVER;
+
+    e = fwrite(&pos, 1, sizeof(int), f);
+    if(e <= 0)
+        return ESCREVER;
+
+    e = fclose(f);
+    if(e != 0)
+        return FECHAR;
+
+    return OK;
+
 }
 
 int carregar (Contato contatos[], int total, int pos) {
-    printf("funcao de carregar tarefas\n");
-    return 0;
+    FILE *f = fopen("contatos", "rb");
+    if(f == NULL)
+        return ABRIR;
+
+    int e = fread(contatos, total, sizeof(Contato), f);
+    if(e <= 0)
+        return LER;
+
+    e = fread(pos, 1, sizeof(int), f);
+    if(e <= 0)
+        return LER;
+
+    e = fclose(f);
+    if(e != 0)
+    return FECHAR;
+
+    return OK;
 }
 
+void clearBuffer() {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF) {
+  }
+}
