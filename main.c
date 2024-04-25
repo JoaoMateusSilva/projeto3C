@@ -46,17 +46,17 @@ ERROS erro = fs[4](contatos, &pos);
         printf("maximo de contatos alcancadas\n");
       else if(erro == NUMERO_INVALIDO)
         printf("numero invalido\n");
-    } else if (opcao == 2) {
+  } else if (opcao == 2) {
       erro = deletar(contatos, &pos);
       if(erro == SEM_CONTATO)
         printf("sem contatos para deletar\n");
       else if(erro == NAO_ENCONTRADO)
         printf("esse c nao existe\n");
-    } else if (opcao == 3) {
+  } else if (opcao == 3) {
       erro = listar(contatos, &pos);
       if(erro == SEM_CONTATO)
         printf("sem contatos para listar\n");
-    } else if (opcao == 0) {
+  } else if (opcao == 0) {
       printf("Sair. . .\n");
       erro = salvar(contatos, &pos);
       if(erro == ABRIR)
@@ -65,7 +65,7 @@ ERROS erro = fs[4](contatos, &pos);
         printf("erro ao fechar o arquivo\n");
       else if(erro == ESCREVER)
         printf("erro ao escrever no arquivo\n");
-    } else {
+  } else {
       printf("opcao invalida");
     }
   } while (opcao != 0);
