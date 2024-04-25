@@ -33,6 +33,7 @@ ERROS erro = fs[4](contatos, &pos);
     printf("2 - Deletar contato\n");
     printf("3 - Listar contatos\n");
     printf("0 - Sair\n");
+   
     printf("Entre com uma opcao: ");
     int i = scanf("%d", &opcao);
     clearBuffer();
