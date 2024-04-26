@@ -11,8 +11,8 @@ typedef ERROS (*funcao)(Contato[], int*);
 
 ERROS criar(Contato contatos[], int *pos);
 ERROS deletar(Contato contatos[], int *pos);
-ERROS listar(Contato contatos[], int pos);
-ERROS salvar(Contato contatos[], int total, int pos);
-ERROS carregar(Contato contatos[], int total, int *pos);
+ERROS listar(Contato contatos[], int *pos);
+ERROS salvar(Contato contatos[], int *pos);
+ERROS carregar(Contato contatos[], int *pos);
 
 void clearBuffer();
