@@ -9,6 +9,10 @@ typedef enum Erros {
     OK, MAX_CONTATOS, SEM_CONTATOS, NAO_EXISTE, ABRIR, FECHAR, ESCREVER, LER
 } Erro;
 
+typedef enum {OK, MAX_CONTATOS, SEM_CONTATOS, NAO_EXISTE, ABRIR, FECHAR, ESCREVER, LER} ERROS;
+
+typedef ERROS (*funcao)(Contato[], int*);
+
 Erro criar(Contato contatos[], int *pos);
 Erro deletar(Contato contatos[], int *pos);
 Erro listar(Contato contatos[], int pos);
