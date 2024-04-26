@@ -31,9 +31,10 @@ ERROS deletar(Contato contatos[], int *pos) {
         if (strcmp(contatos[i].numero, numero_deletar) == 0) {
             pos_deletar = i;
             break;
-        } else if (strcmp(contatos[i].numero, numero_deletar) != 0) { 
-            return NAO_ENCONTRADO;
         }
+    }
+    if (pos_deletar == -1) {
+        return NAO_ENCONTRADO;
     }
     for (int i = pos_deletar; i < *pos; i++) {
         strcpy(contatos[i].nome, contatos[i + 1].nome);
