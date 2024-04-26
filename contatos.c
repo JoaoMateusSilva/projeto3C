@@ -31,7 +31,7 @@ ERROS deletar(Contato contatos[], int *pos) {
         if (strcmp(contatos[i].numero, numero_deletar) == 0) {
             pos_deletar = i;
             break;
-        } else if (strcmp(contatos[i].numero, numero_deletar) != 0) { // Corrigido o operador de comparação
+        } else if (strcmp(contatos[i].numero, numero_deletar) != 0) { 
             return NAO_EXISTE;
         }
     }
@@ -77,22 +77,18 @@ ERROS salvar (Contato contatos[], int total, int pos) {
 
 }
 
-ERROS carregar (Contato contatos[], int total, int pos) {
+ERROS carregar(Contato contatos[], int total, int *pos) {
     FILE *f = fopen("contatos.bin", "rb");
     if (f == NULL)
         return ABRIR;
-
     int qtd = fread(contatos, TOTAL, sizeof(Contato), f);
     if (qtd == 0)
         return LER;
-
     qtd = fread(pos, 1, sizeof(int), f);
     if (qtd == 0)
         return LER;
-
     if (fclose(f))
         return FECHAR;
-
     return OK;
 }
 

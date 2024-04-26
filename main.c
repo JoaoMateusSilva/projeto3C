@@ -42,19 +42,19 @@ ERROS erro = fs[4](contatos, &pos);
     
     if (opcao == 1) {
       erro = criar(contatos, &pos);
-      if(erro == MAX_CONTATO)
+      if(erro == MAX_CONTATOS)
         printf("maximo de contatos alcancadas\n");
       else if(erro == NUMERO_INVALIDO)
         printf("numero invalido\n");
   } else if (opcao == 2) {
       erro = deletar(contatos, &pos);
-      if(erro == SEM_CONTATO)
+      if(erro == SEM_CONTATOS)
         printf("sem contatos para deletar\n");
       else if(erro == NAO_ENCONTRADO)
         printf("esse c nao existe\n");
   } else if (opcao == 3) {
       erro = listar(contatos, &pos);
-      if(erro == SEM_CONTATO)
+      if(erro == SEM_CONTATOS)
         printf("sem contatos para listar\n");
   } else if (opcao == 0) {
       printf("Sair. . .\n");
