@@ -13,5 +13,6 @@
         <li><strong>Carregar Agenda:</strong> Possibilita carregar uma agenda previamente salva, permitindo a continuidade do trabalho com os contatos já cadastrados.</li>
     </ul>
 <h2> Como compilar e executar </h2>
-<li>Para compilar o programa em C, é necessário ter um compilador C instalado, como o GCC (GNU Compiler Collection). Após instalar o GCC, você pode compilar o programa usando o comando gcc -o nome_do_executavel nome_do_arquivo.c, onde nome_do_executavel é o nome que você deseja dar ao arquivo executável e nome_do_arquivo.c é o nome do seu arquivo fonte em C. Por fim, para executar o programa compilado, basta digitar ./nome_do_executavel no terminal. </li>
+<li>Para compilar o programa em C, é necessário ter um compilador C instalado, como o GCC (GNU Compiler Collection). Após instalar o GCC, você pode compilar o programa usando o comando gcc -c main.c -o main.o, gcc -c contatos.c -o contatos.h e por fim, gcc main.o contatos.o -o exec. Onde "exec" é o nome que você deseja dar ao arquivo executável e main.c e contatos.c é o nome dos arquivos desse programa. Por fim, para executar o programa compilado, basta digitar ./exec no caso desse ser o nome do seu arquivo executável no terminal. </li>
+
  
