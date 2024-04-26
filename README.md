@@ -1,6 +1,6 @@
 <h1>Projeto 3 Agenda de contatos</h1>
 <h4>Heron de Souza 22.223.009-6 </h4>
-<h4>João Mateus B da Silva 22.223. </h4>
+<h4>João Mateus B da Silva 22.223.013-8</h4>
 <h4>Rafael Denis Alonso 22.223.016-1</h4>
 <h2>Qual sua Função</h2>
 <li>Agenda de Contatos é um programa em C que permite ao usuário criar uma agenda personalizada para armazenar informações de contatos importantes. Com ele, é possível manter registros organizados de nomes, sobrenomes, endereços de e-mail e números de telefone.</li>
