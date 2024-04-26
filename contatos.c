@@ -47,7 +47,7 @@ ERROS listar(Contato contatos[], int *pos) {
     if (pos == 0)
         return SEM_CONTATOS;
 
-    for (int i = 0; i < pos; i++) {
+    for (int i = 0; i < *pos; i++) {
         printf("Pos: %d\t", i + 1);
         printf("Contato: %s\t", contatos[i].nome);
         printf("Numero: %s\n", contatos[i].numero);
