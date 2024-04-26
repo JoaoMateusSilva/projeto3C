@@ -57,7 +57,7 @@ ERROS listar(Contato contatos[], int pos) {
 }
 
 
-ERROS salvar (Contato contatos[], int total, int pos) {
+ERROS salvar (Contato contatos[], int *pos) {
     FILE *f = fopen("contatos.bin", "wb");
     if (f == NULL)
         return ABRIR;
@@ -77,7 +77,7 @@ ERROS salvar (Contato contatos[], int total, int pos) {
 
 }
 
-ERROS carregar(Contato contatos[], int total, int *pos) {
+ERROS carregar(Contato contatos[], int *pos) {
     FILE *f = fopen("contatos.bin", "rb");
     if (f == NULL)
         return ABRIR;
