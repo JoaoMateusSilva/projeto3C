@@ -43,7 +43,7 @@ ERROS deletar(Contato contatos[], int *pos) {
     return OK;
 }
 
-ERROS listar(Contato contatos[], int pos) {
+ERROS listar(Contato contatos[], int *pos) {
     if (pos == 0)
         return SEM_CONTATOS;
 
