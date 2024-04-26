@@ -66,20 +66,19 @@ int listar(Contato contatos[], int pos) {
 
 
 int salvar (Contato contatos[], int total, int pos) {
-    FILE *f = fopen("contatos", "wb");
-    if(f == NULL)
+    FILE *f = fopen("contatos.bin", "wb");
+    if (f == NULL)
         return ABRIR;
 
-    int e = fwrite(contatos, total, sizeof(Contato), f);
-    if(e <= 0)
+    int qtd = fwrite(contatos, TOTAL, sizeof(Contato), f);
+    if (qtd == 0)
         return ESCREVER;
 
-    e = fwrite(&pos, 1, sizeof(int), f);
-    if(e <= 0)
+    qtd = fwrite(pos, 1, sizeof(int), f);
+    if (qtd == 0)
         return ESCREVER;
 
-    e = fclose(f);
-    if(e != 0)
+    if (fclose(f))
         return FECHAR;
 
     return OK;
@@ -87,27 +86,26 @@ int salvar (Contato contatos[], int total, int pos) {
 }
 
 int carregar (Contato contatos[], int total, int pos) {
-    FILE *f = fopen("contatos", "rb");
-    if(f == NULL)
+    FILE *f = fopen("contatos.bin", "rb");
+    if (f == NULL)
         return ABRIR;
 
-    int e = fread(contatos, total, sizeof(Contato), f);
-    if(e <= 0)
+    int qtd = fread(contatos, TOTAL, sizeof(Contato), f);
+    if (qtd == 0)
         return LER;
 
-    e = fread(pos, 1, sizeof(int), f);
-    if(e <= 0)
+    qtd = fread(pos, 1, sizeof(int), f);
+    if (qtd == 0)
         return LER;
 
-    e = fclose(f);
-    if(e != 0)
-    return FECHAR;
+    if (fclose(f))
+        return FECHAR;
 
     return OK;
 }
 
 void clearBuffer() {
-  int c;
-  while ((c = getchar()) != '\n' && c != EOF) {
-  }
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+    }
 }

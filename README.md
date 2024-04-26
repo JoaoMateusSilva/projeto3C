@@ -1,4 +1,4 @@
-<h1> Funcionalidades PJ3</h1>
+
     <ul>
         <li>Adicionar Contato:</strong> Permite ao usuário adicionar até 255 contatos.</li>
         <li>Listar Contatos:</strong> Lista ao usuário todos os contatos.</li>
