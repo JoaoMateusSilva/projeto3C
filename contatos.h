@@ -5,7 +5,7 @@ typedef struct Contato {
     char numero[11];
 } Contato;
 
-typedef enum {OK, MAX_CONTATOS, SEM_CONTATOS, NAO_EXISTE, ABRIR, FECHAR, ESCREVER, LER} ERROS;
+typedef enum {OK, MAX_CONTATOS, SEM_CONTATOS, NAO_ENCONTRADO, ABRIR, FECHAR, ESCREVER, LER, NUMERO_INVALIDO} ERROS;
 
 typedef ERROS (*funcao)(Contato[], int*);
 
