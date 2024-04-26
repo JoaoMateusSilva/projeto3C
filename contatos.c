@@ -2,7 +2,7 @@
 #include <string.h>
 #include "contatos.h"
 
-int criar(Contato contatos[], int *pos) {
+ERROS criar(Contato contatos[], int *pos) {
     if (*pos >= TOTAL)
         return MAX_CONTATOS;
 
@@ -19,7 +19,7 @@ int criar(Contato contatos[], int *pos) {
     return OK;
 }
 
-int deletar(Contato contatos[], int *pos) {
+ERROS deletar(Contato contatos[], int *pos) {
     if (*pos == 0)
         return SEM_CONTATOS;
 
@@ -51,7 +51,7 @@ int deletar(Contato contatos[], int *pos) {
     return OK;
 }
 
-int listar(Contato contatos[], int pos) {
+ERROS listar(Contato contatos[], int pos) {
     if (pos == 0)
         return SEM_CONTATOS;
 
@@ -65,7 +65,7 @@ int listar(Contato contatos[], int pos) {
 }
 
 
-int salvar (Contato contatos[], int total, int pos) {
+ERROS salvar (Contato contatos[], int total, int pos) {
     FILE *f = fopen("contatos.bin", "wb");
     if (f == NULL)
         return ABRIR;
@@ -85,7 +85,7 @@ int salvar (Contato contatos[], int total, int pos) {
 
 }
 
-int carregar (Contato contatos[], int total, int pos) {
+ERROS carregar (Contato contatos[], int total, int pos) {
     FILE *f = fopen("contatos.bin", "rb");
     if (f == NULL)
         return ABRIR;
