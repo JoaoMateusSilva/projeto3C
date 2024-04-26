@@ -22,32 +22,24 @@ ERROS criar(Contato contatos[], int *pos) {
 ERROS deletar(Contato contatos[], int *pos) {
     if (*pos == 0)
         return SEM_CONTATOS;
-
     char numero_deletar[11];
     printf("Entre com o numero do contato a ser deletado: ");
     fgets(numero_deletar, 11, stdin);
     numero_deletar[strcspn(numero_deletar, "\n")] = '\0';
-
     int pos_deletar = -1;
     for (int i = 0; i < *pos; i++) {
         if (strcmp(contatos[i].numero, numero_deletar) == 0) {
             pos_deletar = i;
             break;
-        }
-        else if ((strcmp(contatos[i].numero, numero_deletar) =! 0)) {
+        } else if (strcmp(contatos[i].numero, numero_deletar) != 0) { // Corrigido o operador de comparação
             return NAO_EXISTE;
-            break;
         }
-        
     }
-
     for (int i = pos_deletar; i < *pos; i++) {
         strcpy(contatos[i].nome, contatos[i + 1].nome);
         strcpy(contatos[i].numero, contatos[i + 1].numero);
     }
-
     *pos = *pos - 1;
-
     return OK;
 }
 
