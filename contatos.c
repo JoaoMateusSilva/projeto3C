@@ -32,7 +32,7 @@ ERROS deletar(Contato contatos[], int *pos) {
             pos_deletar = i;
             break;
         } else if (strcmp(contatos[i].numero, numero_deletar) != 0) { 
-            return NAO_EXISTE;
+            return NAO_ENCONTRADO;
         }
     }
     for (int i = pos_deletar; i < *pos; i++) {
