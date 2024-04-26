@@ -7,15 +7,16 @@ typedef struct Contato {
 
 typedef enum Erros {
     OK, MAX_CONTATOS, SEM_CONTATOS, NAO_EXISTE, ABRIR, FECHAR, ESCREVER, LER
-} Erro;
+} ERROS;
 
 typedef enum {OK, MAX_CONTATOS, SEM_CONTATOS, NAO_EXISTE, ABRIR, FECHAR, ESCREVER, LER} ERROS;
 
 typedef ERROS (*funcao)(Contato[], int*);
 
-Erro criar(Contato contatos[], int *pos);
-Erro deletar(Contato contatos[], int *pos);
-Erro listar(Contato contatos[], int pos);
-Erro salvar(Contato contatos[], int total, int pos);
-Erro carregar(Contato contatos[], int total, int *pos);
+ERROS criar(Contato contatos[], int *pos);
+ERROS deletar(Contato contatos[], int *pos);
+ERROS listar(Contato contatos[], int pos);
+ERROS salvar(Contato contatos[], int total, int pos);
+ERROS carregar(Contato contatos[], int total, int *pos);
+
 void clearBuffer();
